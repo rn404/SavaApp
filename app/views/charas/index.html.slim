@@ -1,0 +1,30 @@
+h1 Character Index
+
+= link_to 'Add New Character Data', new_chara_path
+
+table
+  tr
+    th ID
+    th Name
+    th Reality
+    th Style
+    th Element
+    th Race
+    th Weapon
+    th colspan="3"
+  - @charas.each do |chara|
+    tr
+      td = chara.id
+      td = chara.name
+      td = chara.reality_name
+      td = chara.style_name
+      td = chara.element_name
+      td = chara.race_name
+      td
+        = chara.weapon_name
+      td
+        = link_to 'Show', chara
+      td
+        = link_to 'Edit', edit_chara_path(chara)
+      td
+        = link_to 'Destroy', chara, method: :delete
